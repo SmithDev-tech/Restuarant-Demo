@@ -151,5 +151,65 @@ document.addEventListener('DOMContentLoaded', () => {
             bookingForm.reset();
         });
     }
+    // 6. Hamburger / Mobile Nav Toggle
+    const hamburger = document.getElementById('hamburger-btn');
+    const mainNav   = document.getElementById('main-nav');
+    const mobileBookBtn = mainNav?.querySelector('.mobile-book-btn');
+    const siteHeader = document.querySelector('header');
+
+    const openNav = () => {
+        if (!mainNav || !hamburger) return;
+        mainNav.classList.add('nav-open');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        if (siteHeader) siteHeader.classList.add('nav-is-open');
+        if (mobileBookBtn) mobileBookBtn.style.display = 'inline-block';
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeNav = () => {
+        if (!mainNav || !hamburger) return;
+        mainNav.classList.remove('nav-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        if (siteHeader) siteHeader.classList.remove('nav-is-open');
+        if (mobileBookBtn) mobileBookBtn.style.display = 'none';
+        // Only restore scroll if modal is also closed
+        if (!document.getElementById('booking-modal')?.classList.contains('is-open')) {
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            if (mainNav?.classList.contains('nav-open')) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+    }
+
+    // Close nav when a nav item is clicked
+    if (mainNav) {
+        mainNav.querySelectorAll('ul li').forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+
+        // Mobile book button inside nav opens the modal
+        if (mobileBookBtn) {
+            mobileBookBtn.addEventListener('click', () => {
+                closeNav();
+                openModal();
+            });
+        }
+    }
+
+    // Close nav on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav?.classList.contains('nav-open')) {
+            closeNav();
+        }
+    });
 });
 

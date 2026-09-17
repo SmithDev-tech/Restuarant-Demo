@@ -12,7 +12,7 @@
 <body>
     <header class="animate-header">
         <img src="logo.png" alt="Restaurant logo" class="logo">
-        <nav>
+        <nav id="main-nav">
             <ul>
                 <li>Home</li>
                 <li>Menu</li>
@@ -20,8 +20,14 @@
                 <li>Gallery</li>
                 <li>Contact</li>
             </ul>
+            <button class="btn-book mobile-book-btn" style="display:none;">BOOK A TABLE</button>
         </nav>
         <button class="btn-book">BOOK A TABLE</button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section class="hero">
