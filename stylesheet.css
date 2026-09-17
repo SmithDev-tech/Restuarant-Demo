@@ -56,6 +56,7 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
+    border-bottom: 1px solid transparent;
     transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, border-bottom 0.35s ease;
 }
 
@@ -77,6 +78,16 @@ header.header-scrolled {
 
 .logo:hover {
     transform: scale(1.04);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
 }
 
 nav ul {
@@ -951,17 +962,40 @@ footer p {
 @media (max-width: 700px) {
     header {
         padding: 16px 20px;
-        flex-wrap: wrap;
-        gap: 12px;
     }
 
     header.header-scrolled {
         padding: 12px 20px;
     }
 
+    .nav-toggle {
+        display: block;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(12, 13, 12, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .nav-menu.is-open {
+        display: block;
+    }
+
     nav ul {
-        gap: 16px;
-        font-size: 12px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
     }
 
     .hero {
@@ -1198,201 +1232,4 @@ footer p {
         flex-direction: column;
         gap: 14px;
     }
-}
-
-/* =========================================
-   HAMBURGER BUTTON
-   ========================================= */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    z-index: 1100;
-    flex-shrink: 0;
-}
-
-.hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--text-white);
-    border-radius: 2px;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 0.25s ease,
-                background 0.25s ease;
-    transform-origin: center;
-}
-
-/* Animate to X when nav is open */
-.hamburger.is-open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.hamburger.is-open span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-.hamburger.is-open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-/* =========================================
-   RESPONSIVE — TABLET  (≤900px)
-   ========================================= */
-@media (max-width: 900px) {
-    header {
-        padding: 16px 32px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    /* Remove header stacking context so fixed nav overlay sits above it */
-    header.nav-is-open {
-        z-index: auto;
-    }
-
-    header.header-scrolled {
-        padding: 12px 32px;
-    }
-
-    /* Hide desktop nav & book button; show hamburger */
-    nav,
-    header > .btn-book {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    /* Mobile nav panel — slides down below the header */
-    nav.nav-open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(12, 13, 12, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        z-index: 1050;
-        justify-content: center;
-        align-items: center;
-        animation: navFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    nav.nav-open ul {
-        flex-direction: column;
-        gap: 0;
-        align-items: center;
-    }
-
-    nav.nav-open ul li {
-        font-size: 1.6rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        padding: 14px 0;
-        opacity: 0;
-        animation: navItemIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    nav.nav-open ul li:nth-child(1) { animation-delay: 0.05s; }
-    nav.nav-open ul li:nth-child(2) { animation-delay: 0.10s; }
-    nav.nav-open ul li:nth-child(3) { animation-delay: 0.15s; }
-    nav.nav-open ul li:nth-child(4) { animation-delay: 0.20s; }
-    nav.nav-open ul li:nth-child(5) { animation-delay: 0.25s; }
-
-    /* Book button inside open nav */
-    nav.nav-open .mobile-book-btn {
-        display: inline-block;
-        margin-top: 28px;
-        padding: 14px 36px;
-        font-size: 0.9rem;
-    }
-}
-
-/* =========================================
-   RESPONSIVE — MOBILE  (≤600px)
-   ========================================= */
-@media (max-width: 600px) {
-    header {
-        padding: 14px 20px;
-    }
-
-    header.header-scrolled {
-        padding: 10px 20px;
-    }
-
-    .hero_p {
-        font-size: 0.9rem;
-        padding: 0 12px;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .hero-actions .btn-primary,
-    .hero-actions .btn-outline {
-        width: 80%;
-    }
-
-    .specials-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dish-card {
-        width: 90%;
-        max-width: 340px;
-    }
-
-    .about {
-        flex-direction: column;
-    }
-
-    .about-img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-    }
-
-    .info-strip {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 40px 24px;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        padding: 60px 20px;
-    }
-}
-
-/* =========================================
-   NAV ANIMATION KEYFRAMES
-   ========================================= */
-@keyframes navFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@keyframes navItemIn {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
 }
