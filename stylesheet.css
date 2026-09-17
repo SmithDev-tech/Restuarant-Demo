@@ -913,18 +913,29 @@ footer p {
     }
 
     .features {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         margin-top: -30px;
     }
 
     .feature-item {
-        flex: 1 1 45%;
-        border-right: none;
+        border-right: 1px solid #e5e5e5;
         border-bottom: 1px solid #e5e5e5;
-        padding: 20px 20px;
+        padding: 24px 15px;
+        text-align: center;
     }
 
-    .feature-item:last-child {
+    .feature-item .feature-icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .feature-item:nth-child(even) {
+        border-right: none;
+    }
+
+    .feature-item:nth-child(3),
+    .feature-item:nth-child(4) {
         border-bottom: none;
     }
 
@@ -1021,11 +1032,6 @@ footer p {
     .info-strip,
     footer {
         width: calc(100% - 32px);
-    }
-
-    .feature-item {
-        flex: 1 1 100%;
-        border-bottom: 1px solid #e5e5e5;
     }
 
     .dish-card {
