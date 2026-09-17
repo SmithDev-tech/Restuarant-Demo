@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header class="animate-header">
+        <img src="logo.png" alt="Restaurant logo" class="logo">
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Menu</li>
+                <li>About Us</li>
+                <li>Gallery</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <button class="btn-book">BOOK A TABLE</button>
+    </header>
+
+    <section class="hero">
+        <p class="hero-script animate-hero-script">Crafted Flavors</p>
+        <h1 class="hero-headline animate-hero-headline">
+            <span class="hero-headline-white">UNFORGETTABLE</span>
+            <span class="hero-headline-accent">MOMENTS</span>
+        </h1>
+        <p class="hero_p animate-hero-text">Artisanal dishes prepared with locally sourced ingredients, served in an inviting atmosphere.</p>
+        <div class="hero-actions animate-hero-actions">
+            <button class="btn-primary">VIEW MENU</button>
+            <button class="btn-outline">RESERVE NOW</button>
+        </div>
+    </section>
+
+    <section class="features reveal-on-scroll">
+        <div class="feature-item" style="--item-delay: 0.1s;">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3C7 3 4 7 4 11c0 4 3 8 8 10 5-2 8-6 8-10 0-4-3-8-8-8z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 8v9M12 8c-2 0-4 1-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>FRESH INGREDIENTS</h3>
+            <p>We use only the freshest & finest ingredients.</p>
+        </div>
+        <div class="feature-item" style="--item-delay: 0.2s;">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M5 12h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M8 19h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>EXPERT CHEFS</h3>
+            <p>Our chefs craft every dish with passion and expertise.</p>
+        </div>
+        <div class="feature-item" style="--item-delay: 0.3s;">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 13c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M3 13h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M9 13V9a1 1 0 0 1 1-1h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>QUICK SERVICE</h3>
+            <p>Fast, friendly & professional service every time.</p>
+        </div>
+        <div class="feature-item" style="--item-delay: 0.4s;">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 20s-7-4.5-9.5-9C0.8 7.5 2.5 4 6 4c2 0 3.5 1.2 4 2.5C10.5 5.2 12 4 14 4c3.5 0 5.2 3.5 3.5 7-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>MADE WITH LOVE</h3>
+            <p>Every dish is made with love to delight your taste buds.</p>
+        </div>
+    </section>
+
+    <!-- ---------- CHEF'S SPECIALS ---------- -->
+    <section class="specials">
+        <p class="eyebrow reveal-on-scroll">Popular dishes</p>
+        <h2 class="section-heading reveal-on-scroll">Our Chef&rsquo;s Specials</h2>
+
+        <div class="dish-grid">
+            <div class="dish-card reveal-on-scroll" style="--item-delay: 0.1s;">
+                <div class="dish-image">
+                    <img src="mushroom.png" alt="Creamy Mushroom Pasta" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-count">(125)</span>
+                </div>
+                <h3>Creamy Mushroom Pasta</h3>
+                <p class="dish-price">$12.99</p>
+            </div>
+
+            <div class="dish-card reveal-on-scroll" style="--item-delay: 0.25s;">
+                <div class="dish-image">
+                    <img src="steak.png" alt="Grilled Beef Steak" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-count">(98)</span>
+                </div>
+                <h3>Grilled Beef Steak</h3>
+                <p class="dish-price">$18.99</p>
+            </div>
+
+            <div class="dish-card reveal-on-scroll" style="--item-delay: 0.4s;">
+                <div class="dish-image">
+                    <img src="burger.png" alt="Classic Beef Burger" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-count">(210)</span>
+                </div>
+                <h3>Classic Beef Burger</h3>
+                <p class="dish-price">$10.99</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- ABOUT US ---------- -->
+    <section class="about">
+        <div class="about-image reveal-on-scroll reveal-left">
+            <img src="restaurant.png" alt="Restaurant Interior" class="about-img">
+            <div class="about-badge">
+                <span class="badge-number">10+</span>
+                <span class="badge-label">Years of<br>Experience</span>
+            </div>
+        </div>
+        <div class="about-content reveal-on-scroll reveal-right">
+            <p class="eyebrow">About Us</p>
+            <h2 class="section-heading">A Place Where Good Food & Good Times Come Together</h2>
+            <p class="about-text">We are passionate about creating unforgettable dining experiences. Our chefs use only the freshest ingredients to craft delicious meals that will tantalize your taste buds. Whether you're here for a quick bite or a leisurely dinner, we promise to make your visit memorable.</p>
+            <button class="btn-primary">LEARN MORE</button>
+        </div>
+    </section>
+
+    <!-- ---------- INFO STRIP ---------- -->
+    <section class="info-strip reveal-on-scroll">
+        <div class="info-item" style="--item-delay: 0.1s;">
+            <div class="info-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="info-text">
+                <p class="info-label">Our Location</p>
+                <p class="info-value">123 Food Street, Yummy City</p>
+            </div>
+        </div>
+        <div class="info-item" style="--item-delay: 0.2s;">
+            <div class="info-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="info-text">
+                <p class="info-label">Opening Hours</p>
+                <p class="info-value">Mon &ndash; Sun, 10:00 AM &ndash; 11:00 PM</p>
+            </div>
+        </div>
+        <div class="info-item" style="--item-delay: 0.3s;">
+            <div class="info-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="info-text">
+                <p class="info-label">Call Us</p>
+                <p class="info-value">(123) 456-7890</p>
+            </div>
+        </div>
+        <div class="info-item" style="--item-delay: 0.4s;">
+            <div class="info-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12h11l-3-3m3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 7h3l3 3v5h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="17" r="1.6" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="18" cy="17" r="1.6" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="info-text">
+                <p class="info-label">Fast Delivery</p>
+                <p class="info-value">Delicious food, delivered fast</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Yummy City Restaurant. All rights reserved.</p>
+        <div class="socials">
+            <a class="social-icon" href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.3"/><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor"/></svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6.5c-.6.3-1.2.5-1.9.6.7-.4 1.2-1.1 1.4-1.9-.6.4-1.4.7-2.1.8a3.3 3.3 0 0 0-5.7 3 9.4 9.4 0 0 1-6.8-3.5c-.3.5-.4 1.1-.4 1.7 0 1.1.6 2.1 1.4 2.7-.5 0-1-.2-1.5-.4v.1c0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.2 3 2.3-1.1.9-2.5 1.4-4 1.4H4c1.4.9 3.1 1.5 4.9 1.5 5.8 0 9-4.9 9-9.1v-.4c.6-.4 1.2-1 1.6-1.6z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ---------- RESERVATION POPUP MODAL ---------- -->
+    <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            
+            <div class="modal-body" id="booking-form-wrapper">
+                <p class="eyebrow">Reservations</p>
+                <h2 id="modal-title" class="modal-heading">Book A Table</h2>
+                <p class="modal-subtext">Reserve your table in advance for an unforgettable dining experience.</p>
+                
+                <form id="booking-form" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-name">Full Name</label>
+                            <input type="text" id="book-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-phone">Phone Number</label>
+                            <input type="tel" id="book-phone" name="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-date">Date</label>
+                            <input type="date" id="book-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-time">Time</label>
+                            <select id="book-time" name="time" required>
+                                <option value="" disabled selected>Select Time</option>
+                                <option value="12:00 PM">12:00 PM (Lunch)</option>
+                                <option value="01:00 PM">01:00 PM (Lunch)</option>
+                                <option value="02:00 PM">02:00 PM (Lunch)</option>
+                                <option value="06:00 PM">06:00 PM (Dinner)</option>
+                                <option value="07:00 PM">07:00 PM (Dinner)</option>
+                                <option value="08:00 PM">08:00 PM (Dinner)</option>
+                                <option value="09:00 PM">09:00 PM (Dinner)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-guests">Guests</label>
+                            <select id="book-guests" name="guests" required>
+                                <option value="1 Person">1 Person</option>
+                                <option value="2 People" selected>2 People</option>
+                                <option value="3 People">3 People</option>
+                                <option value="4 People">4 People</option>
+                                <option value="5+ People">5+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-seating">Seating Preference</label>
+                            <select id="book-seating" name="seating">
+                                <option value="Standard Dining">Standard Dining</option>
+                                <option value="Window View">Window View</option>
+                                <option value="Outdoor Terrace">Outdoor Terrace</option>
+                                <option value="Cozy Booth">Cozy Booth</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-requests">Special Requests (Optional)</label>
+                        <input type="text" id="book-requests" name="requests" placeholder="e.g. Birthday, Anniversary, Dietary preferences">
+                    </div>
+
+                    <button type="submit" class="btn-primary modal-submit-btn">CONFIRM RESERVATION</button>
+                </form>
+            </div>
+
+            <div class="modal-success" id="booking-success" style="display: none;">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Table Reserved!</h3>
+                <p id="success-details">Thank you! Your table reservation has been received. A confirmation SMS has been sent to your phone.</p>
+                <button type="button" class="btn-primary" id="success-close-btn">DONE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
