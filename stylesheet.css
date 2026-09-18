@@ -1253,10 +1253,6 @@ footer p {
         gap: 10px;
     }
 
-    .form-row:nth-child(2) {
-        flex-direction: row;
-    }
-
     .form-group {
         gap: 4px;
     }
