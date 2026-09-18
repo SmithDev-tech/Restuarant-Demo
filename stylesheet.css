@@ -1231,11 +1231,44 @@ footer p {
 
 @media (max-width: 580px) {
     .modal-card {
-        padding: 24px 18px;
+        padding: 16px 14px;
+    }
+
+    .modal-heading {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+
+    .modal-subtext {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+
+    .booking-form {
+        gap: 10px;
     }
 
     .form-row {
         flex-direction: column;
-        gap: 14px;
+        gap: 10px;
+    }
+
+    .form-row:nth-child(2) {
+        flex-direction: row;
+    }
+
+    .form-group {
+        gap: 4px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .modal-submit-btn {
+        padding: 12px;
+        margin-top: 4px;
     }
 }

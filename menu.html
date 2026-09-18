@@ -4,13 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Demo</title>
+    <title>Restaurant Menu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Anton&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .menu-hero {
+            padding: 140px 20px 60px 20px;
+            text-align: center;
+            background-image: linear-gradient(to bottom, rgba(12, 13, 12, 0.8), rgba(12, 13, 12, 1)), url('herbg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-hero h1 {
+            font-size: 3rem;
+            color: var(--green);
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .menu-section {
+            width: calc(100% - 60px);
+            max-width: 1100px;
+            margin: 40px auto 80px auto;
+        }
+
+        .menu-category-title {
+            font-size: 2.2rem;
+            border-bottom: 2px solid var(--border-soft);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,189 +66,149 @@
         <button class="btn-book">BOOK A TABLE</button>
     </header>
 
-    <section class="hero">
-        <div class="hero-title-wrapper animate-hero-headline">
-            <h1 class="sr-only">Crafted Flavors - Unforgettable Moments</h1>
-            <img src="hero text.png" alt="Crafted Flavors - Unforgettable Moments" class="hero-title-img">
-        </div>
-        <p class="hero_p animate-hero-text">Artisanal dishes prepared with locally sourced ingredients, served in an
-            inviting atmosphere.</p>
-        <div class="hero-actions animate-hero-actions">
-            <button class="btn-primary" onclick="window.location.href='menu.html'">VIEW MENU</button>
-            <button class="btn-outline">RESERVE NOW</button>
-        </div>
+    <section class="menu-hero">
+        <h1 class="animate-hero-headline">Our Menu</h1>
+        <p class="animate-hero-text" style="color: var(--text-muted); margin-top: 15px; font-size: 1.1rem;">Discover our
+            crafted flavors and artisanal dishes</p>
     </section>
 
-    <section class="features reveal-on-scroll">
-        <div class="feature-item" style="--item-delay: 0.1s;">
-            <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3C7 3 4 7 4 11c0 4 3 8 8 10 5-2 8-6 8-10 0-4-3-8-8-8z" stroke="currentColor"
-                        stroke-width="1.5" />
-                    <path d="M12 8v9M12 8c-2 0-4 1-4 3" stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" />
-                </svg>
-            </div>
-            <h3>FRESH INGREDIENTS</h3>
-            <p>We use only the freshest & finest ingredients.</p>
-        </div>
-        <div class="feature-item" style="--item-delay: 0.2s;">
-            <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 12c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" />
-                    <path d="M5 12h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2z" stroke="currentColor" stroke-width="1.5" />
-                    <path d="M8 19h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-            </div>
-            <h3>EXPERT CHEFS</h3>
-            <p>Our chefs craft every dish with passion and expertise.</p>
-        </div>
-        <div class="feature-item" style="--item-delay: 0.3s;">
-            <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 13c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" />
-                    <path d="M3 13h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M9 13V9a1 1 0 0 1 1-1h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-            </div>
-            <h3>QUICK SERVICE</h3>
-            <p>Fast, friendly & professional service every time.</p>
-        </div>
-        <div class="feature-item" style="--item-delay: 0.4s;">
-            <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 20s-7-4.5-9.5-9C0.8 7.5 2.5 4 6 4c2 0 3.5 1.2 4 2.5C10.5 5.2 12 4 14 4c3.5 0 5.2 3.5 3.5 7-2.5 4.5-9.5 9-9.5 9z"
-                        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                </svg>
-            </div>
-            <h3>MADE WITH LOVE</h3>
-            <p>Every dish is made with love to delight your taste buds.</p>
-        </div>
-    </section>
-
-    <!-- ---------- CHEF'S SPECIALS ---------- -->
-    <section class="specials">
-        <p class="eyebrow reveal-on-scroll">Popular dishes</p>
-        <h2 class="section-heading reveal-on-scroll">Our Chef&rsquo;s Specials</h2>
-
-        <div class="dish-grid">
-            <div class="dish-card reveal-on-scroll" style="--item-delay: 0.1s;">
+    <!-- Starters -->
+    <section class="menu-section">
+        <h2 class="menu-category-title">Starters</h2>
+        <div class="menu-grid">
+            <div class="dish-card reveal-on-scroll">
                 <div class="dish-image">
-                    <img src="mushroom.png" alt="Creamy Mushroom Pasta" class="dish-img">
+                    <img src="Classic Bruschetta.jpg" alt="Classic Bruschetta" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-count">(85)</span>
+                </div>
+                <h3>Classic Bruschetta</h3>
+                <p class="dish-price">$8.99</p>
+            </div>
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="Crispy Calamari.jpg" alt="Crispy Calamari" class="dish-img">
                     <button class="dish-fav" aria-label="Save dish">&#9825;</button>
                 </div>
                 <div class="dish-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="rating-count">(125)</span>
+                    <span class="rating-count">(112)</span>
                 </div>
-                <h3>Creamy Mushroom Pasta</h3>
-                <p class="dish-price">$12.99</p>
+                <h3>Crispy Calamari</h3>
+                <p class="dish-price">$11.99</p>
             </div>
-
-            <div class="dish-card reveal-on-scroll" style="--item-delay: 0.25s;">
+            <div class="dish-card reveal-on-scroll">
                 <div class="dish-image">
-                    <img src="steak.png" alt="Grilled Beef Steak" class="dish-img">
+                    <img src="Caprese Salad.jpg" alt="Caprese Salad" class="dish-img">
                     <button class="dish-fav" aria-label="Save dish">&#9825;</button>
                 </div>
                 <div class="dish-rating">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="rating-count">(98)</span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-count">(64)</span>
                 </div>
-                <h3>Grilled Beef Steak</h3>
-                <p class="dish-price">$18.99</p>
+                <h3>Caprese Salad</h3>
+                <p class="dish-price">$9.99</p>
             </div>
+        </div>
+    </section>
 
-            <div class="dish-card reveal-on-scroll" style="--item-delay: 0.4s;">
+    <!-- Main Courses -->
+    <section class="menu-section">
+        <h2 class="menu-category-title">Main Courses</h2>
+        <div class="menu-grid">
+            <div class="dish-card reveal-on-scroll">
                 <div class="dish-image">
-                    <img src="burger.png" alt="Classic Beef Burger" class="dish-img">
+                    <img src="Truffle Mushroom Pasta.jpg" alt="Truffle Mushroom Pasta" class="dish-img">
                     <button class="dish-fav" aria-label="Save dish">&#9825;</button>
                 </div>
                 <div class="dish-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     <span class="rating-count">(210)</span>
                 </div>
-                <h3>Classic Beef Burger</h3>
-                <p class="dish-price">$10.99</p>
+                <h3>Truffle Mushroom Pasta</h3>
+                <p class="dish-price">$18.99</p>
+            </div>
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="Grilled Salmon.jpg" alt="Grilled Salmon" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-count">(145)</span>
+                </div>
+                <h3>Grilled Salmon</h3>
+                <p class="dish-price">$22.99</p>
+            </div>
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="Prime Ribeye Steak.jpg" alt="Prime Ribeye Steak" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-count">(320)</span>
+                </div>
+                <h3>Prime Ribeye Steak</h3>
+                <p class="dish-price">$29.99</p>
+            </div>
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="Herb Roasted Chicken.jpg" alt="Herb Roasted Chicken" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-count">(98)</span>
+                </div>
+                <h3>Herb Roasted Chicken</h3>
+                <p class="dish-price">$19.99</p>
             </div>
         </div>
     </section>
 
-    <!-- ---------- ABOUT US ---------- -->
-    <section class="about">
-        <div class="about-image reveal-on-scroll reveal-left">
-            <img src="restaurant.png" alt="Restaurant Interior" class="about-img">
-            <div class="about-badge">
-                <span class="badge-number">10+</span>
-                <span class="badge-label">Years of<br>Experience</span>
+    <!-- Desserts & Drinks -->
+    <section class="menu-section">
+        <h2 class="menu-category-title">Desserts & Drinks</h2>
+        <div class="menu-grid">
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="Classic Tiramisu.jpg" alt="Classic Tiramisu" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-count">(176)</span>
+                </div>
+                <h3>Classic Tiramisu</h3>
+                <p class="dish-price">$7.99</p>
             </div>
-        </div>
-        <div class="about-content reveal-on-scroll reveal-right">
-            <p class="eyebrow">About Us</p>
-            <h2 class="section-heading">A Place Where Good Food & Good Times Come Together</h2>
-            <p class="about-text">We are passionate about creating unforgettable dining experiences. Our chefs use only
-                the freshest ingredients to craft delicious meals that will tantalize your taste buds. Whether you're
-                here for a quick bite or a leisurely dinner, we promise to make your visit memorable.</p>
-            <button class="btn-primary">LEARN MORE</button>
-        </div>
-    </section>
-
-    <!-- ---------- INFO STRIP ---------- -->
-    <section class="info-strip reveal-on-scroll">
-        <div class="info-item" style="--item-delay: 0.1s;">
-            <div class="info-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z" stroke="currentColor"
-                        stroke-width="1.5" />
-                    <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.5" />
-                </svg>
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="New York Cheesecake.jpg" alt="New York Cheesecake" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-count">(142)</span>
+                </div>
+                <h3>New York Cheesecake</h3>
+                <p class="dish-price">$8.99</p>
             </div>
-            <div class="info-text">
-                <p class="info-label">Our Location</p>
-                <p class="info-value">123 Food Street, Yummy City</p>
-            </div>
-        </div>
-        <div class="info-item" style="--item-delay: 0.2s;">
-            <div class="info-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5" />
-                    <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-            </div>
-            <div class="info-text">
-                <p class="info-label">Opening Hours</p>
-                <p class="info-value">Mon &ndash; Sun, 10:00 AM &ndash; 11:00 PM</p>
-            </div>
-        </div>
-        <div class="info-item" style="--item-delay: 0.3s;">
-            <div class="info-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-3z"
-                        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="info-text">
-                <p class="info-label">Call Us</p>
-                <p class="info-value">(123) 456-7890</p>
-            </div>
-        </div>
-        <div class="info-item" style="--item-delay: 0.4s;">
-            <div class="info-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12h11l-3-3m3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M14 7h3l3 3v5h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <circle cx="8" cy="17" r="1.6" stroke="currentColor" stroke-width="1.5" />
-                    <circle cx="18" cy="17" r="1.6" stroke="currentColor" stroke-width="1.5" />
-                </svg>
-            </div>
-            <div class="info-text">
-                <p class="info-label">Fast Delivery</p>
-                <p class="info-value">Delicious food, delivered fast</p>
+            <div class="dish-card reveal-on-scroll">
+                <div class="dish-image">
+                    <img src="Signature Cocktail.jpg" alt="Signature Cocktail" class="dish-img">
+                    <button class="dish-fav" aria-label="Save dish">&#9825;</button>
+                </div>
+                <div class="dish-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-count">(89)</span>
+                </div>
+                <h3>Signature Cocktail</h3>
+                <p class="dish-price">$12.99</p>
             </div>
         </div>
     </section>

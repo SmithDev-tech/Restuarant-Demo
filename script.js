@@ -58,20 +58,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Smooth scroll for navigation items if needed
+    // 4. Navigation logic
     const navItems = document.querySelectorAll('nav ul li');
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             const text = item.textContent.trim().toLowerCase();
             let targetSection = null;
+            
+            const isMenuPage = window.location.pathname.endsWith('menu.html');
+            const isGalleryPage = window.location.pathname.endsWith('gallery.html');
+            const isOtherPage = isMenuPage || isGalleryPage;
+
             if (text === 'home') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (isOtherPage) {
+                    window.location.href = 'index.html';
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             } else if (text === 'menu') {
-                targetSection = document.querySelector('.specials');
+                if (!isMenuPage) {
+                    window.location.href = 'menu.html';
+                }
+            } else if (text === 'gallery') {
+                if (!isGalleryPage) {
+                    window.location.href = 'gallery.html';
+                }
             } else if (text === 'about us') {
-                targetSection = document.querySelector('.about');
-            } else if (text === 'gallery' || text === 'contact') {
-                targetSection = document.querySelector('.info-strip') || document.querySelector('footer');
+                if (isOtherPage) {
+                    window.location.href = 'index.html#about';
+                } else {
+                    targetSection = document.querySelector('.about');
+                }
+            } else if (text === 'contact') {
+                if (isOtherPage) {
+                    window.location.href = 'index.html#contact';
+                } else {
+                    targetSection = document.querySelector('.info-strip') || document.querySelector('footer');
+                }
             }
 
             if (targetSection) {
