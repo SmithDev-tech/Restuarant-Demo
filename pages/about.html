@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – Yummy City Restaurant</title>
+    <meta name="description" content="Learn about Yummy City Restaurant – our story, our chefs, and our passion for crafting unforgettable dining experiences since 2016.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/stylesheet.css">
+    <style>
+        /* ── Page Hero ── */
+        .page-hero {
+            padding: 150px 20px 70px;
+            text-align: center;
+            background-image: linear-gradient(to bottom, rgba(12,13,12,0.75), rgba(12,13,12,1)), url('../assets/images/herbg.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--green);
+            margin: 0 0 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .page-hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* ── Shared Section Wrapper ── */
+        .content-section {
+            width: calc(100% - 60px);
+            max-width: 1100px;
+            margin: 80px auto;
+        }
+
+        /* ── Our Story ── */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        .story-img-wrap {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .story-img-wrap img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+        .story-year-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: var(--green);
+            color: #0c0d0c;
+            border-radius: 14px;
+            padding: 16px 22px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.2;
+        }
+        .story-year-badge .num { font-size: 2rem; display: block; }
+        .story-year-badge .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .story-text { }
+        .story-text .eyebrow { margin-bottom: 10px; }
+        .story-text .section-heading { margin-top: 0; margin-bottom: 20px; }
+        .story-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+
+        /* ── Values Strip ── */
+        .values-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin: 80px auto;
+            width: calc(100% - 60px);
+            max-width: 1100px;
+        }
+        .value-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 18px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.45), 0 0 16px rgba(47,191,110,0.1);
+        }
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 20px;
+            color: var(--green);
+        }
+        .value-icon svg { width: 100%; height: 100%; }
+        .value-card h3 {
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0 0 10px;
+        }
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ── Team ── */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
+        }
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.45), 0 0 16px rgba(47,191,110,0.1);
+        }
+        .team-photo {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+        .team-info {
+            padding: 20px;
+        }
+        .team-info h3 {
+            font-size: 1rem;
+            color: #fff;
+            margin: 0 0 4px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--green), transparent);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 48px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 4px rgba(47,191,110,0.2);
+        }
+        .timeline-year {
+            font-size: 0.75rem;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .timeline-item h4 {
+            font-size: 1.05rem;
+            color: #fff;
+            margin: 0 0 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ── CTA Band ── */
+        .cta-band {
+            background: linear-gradient(135deg, rgba(47,191,110,0.12), rgba(47,191,110,0.04));
+            border: 1px solid rgba(47,191,110,0.2);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px auto;
+            width: calc(100% - 60px);
+            max-width: 800px;
+        }
+        .cta-band h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            color: #fff;
+            margin: 0 0 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .cta-band p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0 0 30px;
+        }
+        .cta-band .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="animate-header">
+        <img src="../assets/images/logo.png" alt="Restaurant logo" class="logo">
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html" class="nav-active">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="btn-book">BOOK A TABLE</button>
+    </header>
+
+    <!-- ── Hero ── -->
+    <section class="page-hero">
+        <p class="eyebrow animate-hero-headline">Our Story</p>
+        <h1 class="animate-hero-headline">Crafted with Passion,<br>Served with Pride</h1>
+        <p class="animate-hero-text">From a humble kitchen dream to an award-winning dining destination — discover the heart behind every dish.</p>
+    </section>
+
+    <!-- ── Our Story ── -->
+    <section class="content-section">
+        <div class="story-grid">
+            <div class="story-img-wrap reveal-on-scroll reveal-left">
+                <img src="../assets/images/restaurant.png" alt="Yummy City Restaurant interior">
+                <div class="story-year-badge">
+                    <span class="num">10+</span>
+                    <span class="lbl">Years of Excellence</span>
+                </div>
+            </div>
+            <div class="story-text reveal-on-scroll reveal-right">
+                <p class="eyebrow">Who We Are</p>
+                <h2 class="section-heading">A Place Where Good Food &amp; Good Times Come Together</h2>
+                <p>Founded in 2016, Yummy City Restaurant was born from a simple but powerful belief: everyone deserves a meal that feels like a celebration. What started as a 12-seat neighbourhood bistro has grown into a beloved dining destination — but our soul has never changed.</p>
+                <p>We are passionate about creating unforgettable dining experiences. Our chefs use only the freshest, locally-sourced ingredients to craft dishes that honour tradition while embracing modern creativity.</p>
+                <p>Whether you're here for a quick lunch, a romantic dinner, or a milestone celebration, we promise to make every moment memorable.</p>
+                <a href="menu.html" class="btn-primary" style="display:inline-block; text-decoration:none; margin-top:10px;">VIEW OUR MENU</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Core Values ── -->
+    <section style="text-align:center; padding:0 20px;">
+        <p class="eyebrow reveal-on-scroll">What Drives Us</p>
+        <h2 class="section-heading reveal-on-scroll">Our Core Values</h2>
+    </section>
+    <div class="values-strip">
+        <div class="value-card reveal-on-scroll" style="--item-delay:0.1s;">
+            <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3C7 3 4 7 4 11c0 4 3 8 8 10 5-2 8-6 8-10 0-4-3-8-8-8z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 8v9M12 8c-2 0-4 1-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>Fresh Ingredients</h3>
+            <p>We source locally and seasonally to ensure every bite bursts with natural flavour and vitality.</p>
+        </div>
+        <div class="value-card reveal-on-scroll" style="--item-delay:0.2s;">
+            <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M5 12h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M8 19h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>Expert Craftsmanship</h3>
+            <p>Every dish is a masterpiece — our chefs combine classical techniques with bold, inventive ideas.</p>
+        </div>
+        <div class="value-card reveal-on-scroll" style="--item-delay:0.3s;">
+            <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 20s-7-4.5-9.5-9C0.8 7.5 2.5 4 6 4c2 0 3.5 1.2 4 2.5C10.5 5.2 12 4 14 4c3.5 0 5.2 3.5 3.5 7-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>Made With Love</h3>
+            <p>We believe food is emotion on a plate. Every detail is prepared with genuine care and warmth.</p>
+        </div>
+        <div class="value-card reveal-on-scroll" style="--item-delay:0.4s;">
+            <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>Consistent Excellence</h3>
+            <p>Rain or shine, our standards never slip. Expect the same outstanding quality every single visit.</p>
+        </div>
+    </div>
+
+    <!-- ── Meet the Team ── -->
+    <section class="content-section">
+        <div style="text-align:center; margin-bottom:50px;">
+            <p class="eyebrow reveal-on-scroll">The People Behind the Plates</p>
+            <h2 class="section-heading reveal-on-scroll">Meet Our Team</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-card reveal-on-scroll" style="--item-delay:0.1s;">
+                <img src="../assets/images/48059a498bd12c0ed38ec6b3f6c09134.jpg" alt="Executive Chef Marco" class="team-photo">
+                <div class="team-info">
+                    <h3>Marco Delucca</h3>
+                    <p class="team-role">Executive Chef</p>
+                </div>
+            </div>
+            <div class="team-card reveal-on-scroll" style="--item-delay:0.2s;">
+                <img src="../assets/images/restaurant.png" alt="Sous Chef Sofia" class="team-photo">
+                <div class="team-info">
+                    <h3>Sofia Reyes</h3>
+                    <p class="team-role">Sous Chef</p>
+                </div>
+            </div>
+            <div class="team-card reveal-on-scroll" style="--item-delay:0.3s;">
+                <img src="../assets/images/herbg.png" alt="Pastry Chef Emma" class="team-photo">
+                <div class="team-info">
+                    <h3>Emma Laurent</h3>
+                    <p class="team-role">Pastry Chef</p>
+                </div>
+            </div>
+            <div class="team-card reveal-on-scroll" style="--item-delay:0.4s;">
+                <img src="../assets/images/bg.png" alt="Bar Manager James" class="team-photo">
+                <div class="team-info">
+                    <h3>James Okafor</h3>
+                    <p class="team-role">Bar Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Timeline ── -->
+    <section class="content-section">
+        <div style="text-align:center; margin-bottom:50px;">
+            <p class="eyebrow reveal-on-scroll">Our Journey</p>
+            <h2 class="section-heading reveal-on-scroll">A Decade of Milestones</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal-on-scroll">
+                <p class="timeline-year">2016</p>
+                <h4>The First Flame</h4>
+                <p>Yummy City Restaurant opened its doors with 12 seats, a wood-fired oven, and an unshakeable vision to bring the neighbourhood together over exceptional food.</p>
+            </div>
+            <div class="timeline-item reveal-on-scroll">
+                <p class="timeline-year">2018</p>
+                <h4>First Culinary Award</h4>
+                <p>Recognised by the City Dining Guide as "Best New Restaurant," validating our commitment to quality and creativity in every dish.</p>
+            </div>
+            <div class="timeline-item reveal-on-scroll">
+                <p class="timeline-year">2020</p>
+                <h4>Expanding Our Reach</h4>
+                <p>Doubled our seating capacity and launched a weekend brunch menu, welcoming an even wider community of food lovers.</p>
+            </div>
+            <div class="timeline-item reveal-on-scroll">
+                <p class="timeline-year">2023</p>
+                <h4>Rooftop Terrace Opens</h4>
+                <p>Added a breathtaking open-air terrace, becoming the go-to sunset dining spot in Yummy City.</p>
+            </div>
+            <div class="timeline-item reveal-on-scroll">
+                <p class="timeline-year">2026</p>
+                <h4>A Decade of Flavour</h4>
+                <p>Celebrating 10+ years — still cooking with the same passion, still committed to the same standard of excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <div class="cta-band reveal-on-scroll">
+        <h2>Ready to Experience It Yourself?</h2>
+        <p>Join us for lunch, dinner, or a special occasion. We'd love to make your next meal unforgettable.</p>
+        <div class="btn-group">
+            <button class="btn-primary btn-book">BOOK A TABLE</button>
+            <a href="menu.html" class="btn-outline" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">VIEW MENU</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Yummy City Restaurant. All rights reserved.</p>
+        <div class="socials">
+            <a class="social-icon" href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="16.2" cy="7.8" r="0.6" fill="currentColor"/>
+                </svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 6.5c-.6.3-1.2.5-1.9.6.7-.4 1.2-1.1 1.4-1.9-.6.4-1.4.7-2.1.8a3.3 3.3 0 0 0-5.7 3 9.4 9.4 0 0 1-6.8-3.5c-.3.5-.4 1.1-.4 1.7 0 1.1.6 2.1 1.4 2.7-.5 0-1-.2-1.5-.4v.1c0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.2 3 2.3-1.1.9-2.5 1.4-4 1.4H4c1.4.9 3.1 1.5 4.9 1.5 5.8 0 9-4.9 9-9.1v-.4c.6-.4 1.2-1 1.6-1.6z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ── RESERVATION POPUP MODAL ── -->
+    <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="booking-form-wrapper">
+                <p class="eyebrow">Reservations</p>
+                <h2 id="modal-title" class="modal-heading">Book A Table</h2>
+                <p class="modal-subtext">Reserve your table in advance for an unforgettable dining experience.</p>
+                <form id="booking-form" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-name">Full Name</label>
+                            <input type="text" id="book-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-phone">Phone Number</label>
+                            <input type="tel" id="book-phone" name="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-date">Date</label>
+                            <input type="date" id="book-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-time">Time</label>
+                            <select id="book-time" name="time" required>
+                                <option value="" disabled selected>Select Time</option>
+                                <option value="12:00 PM">12:00 PM (Lunch)</option>
+                                <option value="01:00 PM">01:00 PM (Lunch)</option>
+                                <option value="02:00 PM">02:00 PM (Lunch)</option>
+                                <option value="06:00 PM">06:00 PM (Dinner)</option>
+                                <option value="07:00 PM">07:00 PM (Dinner)</option>
+                                <option value="08:00 PM">08:00 PM (Dinner)</option>
+                                <option value="09:00 PM">09:00 PM (Dinner)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-guests">Guests</label>
+                            <select id="book-guests" name="guests" required>
+                                <option value="1 Person">1 Person</option>
+                                <option value="2 People" selected>2 People</option>
+                                <option value="3 People">3 People</option>
+                                <option value="4 People">4 People</option>
+                                <option value="5+ People">5+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-seating">Seating Preference</label>
+                            <select id="book-seating" name="seating">
+                                <option value="Standard Dining">Standard Dining</option>
+                                <option value="Window View">Window View</option>
+                                <option value="Outdoor Terrace">Outdoor Terrace</option>
+                                <option value="Cozy Booth">Cozy Booth</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-requests">Special Requests (Optional)</label>
+                        <input type="text" id="book-requests" name="requests" placeholder="e.g. Birthday, Anniversary, Dietary preferences">
+                    </div>
+                    <button type="submit" class="btn-primary modal-submit-btn">CONFIRM RESERVATION</button>
+                </form>
+            </div>
+            <div class="modal-success" id="booking-success" style="display: none;">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Table Reserved!</h3>
+                <p id="success-details">Thank you! Your table reservation has been received.</p>
+                <button type="button" class="btn-primary" id="success-close-btn">DONE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

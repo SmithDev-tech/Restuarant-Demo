@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Yummy City Restaurant</title>
+    <meta name="description" content="Get in touch with Yummy City Restaurant. Find our location, opening hours, phone number, or send us a message directly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/stylesheet.css">
+    <style>
+        /* ── Page Hero ── */
+        .page-hero {
+            padding: 150px 20px 70px;
+            text-align: center;
+            background-image: linear-gradient(to bottom, rgba(12,13,12,0.75), rgba(12,13,12,1)), url('../assets/images/herbg.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--green);
+            margin: 0 0 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .page-hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* ── Contact Layout ── */
+        .contact-wrapper {
+            width: calc(100% - 60px);
+            max-width: 1100px;
+            margin: 80px auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 60px;
+            align-items: start;
+        }
+        @media (max-width: 850px) {
+            .contact-wrapper { grid-template-columns: 1fr; gap: 50px; }
+        }
+
+        /* ── Info Cards ── */
+        .contact-info-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact-info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 28px 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-info-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 14px rgba(47,191,110,0.08);
+        }
+        .ci-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: rgba(47,191,110,0.1);
+            border: 1px solid rgba(47,191,110,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green);
+        }
+        .ci-icon svg { width: 22px; height: 22px; }
+        .ci-text { }
+        .ci-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+            font-weight: 600;
+            margin: 0 0 6px;
+        }
+        .ci-value {
+            font-size: 0.95rem;
+            color: #fff;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .ci-value a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .ci-value a:hover { color: var(--green); }
+
+        /* ── Map Placeholder ── */
+        .map-embed {
+            margin-top: 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-soft);
+            height: 220px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: var(--text-muted);
+        }
+        .map-embed svg { width: 40px; height: 40px; color: var(--green); opacity: 0.6; }
+        .map-embed p { font-size: 0.85rem; margin: 0; }
+
+        /* ── Contact Form ── */
+        .contact-form-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 40px 36px;
+        }
+        .contact-form-card h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 0 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .contact-form-card .sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0 0 30px;
+        }
+        .cf-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        .cf-group label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .cf-group input,
+        .cf-group select,
+        .cf-group textarea {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 13px 16px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            outline: none;
+            resize: none;
+        }
+        .cf-group input::placeholder,
+        .cf-group textarea::placeholder { color: #555; }
+        .cf-group input:focus,
+        .cf-group select:focus,
+        .cf-group textarea:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(47,191,110,0.12);
+        }
+        .cf-group select option { background: #1a1c1a; }
+        .cf-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 500px) { .cf-row { grid-template-columns: 1fr; } }
+        .cf-submit {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* ── Send success state ── */
+        .cf-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .cf-success .success-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(47,191,110,0.15);
+            border: 2px solid var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--green);
+        }
+        .cf-success .success-icon svg { width: 32px; height: 32px; }
+        .cf-success h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin: 0 0 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .cf-success p { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 24px; }
+
+        /* ── Opening Hours Table ── */
+        .hours-section {
+            width: calc(100% - 60px);
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .hours-table th {
+            background: rgba(47,191,110,0.08);
+            color: var(--green);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 14px 20px;
+            text-align: left;
+        }
+        .hours-table td {
+            padding: 13px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-soft);
+        }
+        .hours-table tr:last-child td { border-bottom: none; }
+        .hours-table td:first-child { color: #fff; font-weight: 500; }
+        .hours-table .today-row td { color: var(--green); }
+        .hours-badge {
+            display: inline-block;
+            background: rgba(47,191,110,0.15);
+            color: var(--green);
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 99px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="animate-header">
+        <img src="../assets/images/logo.png" alt="Restaurant logo" class="logo">
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="nav-active">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="btn-book">BOOK A TABLE</button>
+    </header>
+
+    <!-- ── Hero ── -->
+    <section class="page-hero">
+        <p class="eyebrow animate-hero-headline">We'd Love to Hear From You</p>
+        <h1 class="animate-hero-headline">Contact Us</h1>
+        <p class="animate-hero-text">Have a question, special request, or just want to say hi? Reach out — we're always happy to help.</p>
+    </section>
+
+    <!-- ── Contact Layout ── -->
+    <div class="contact-wrapper">
+
+        <!-- Left: Info + Map -->
+        <div class="reveal-on-scroll reveal-left">
+            <p class="eyebrow" style="margin-bottom:24px;">Find Us</p>
+            <div class="contact-info-stack">
+
+                <div class="contact-info-card">
+                    <div class="ci-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="ci-text">
+                        <p class="ci-label">Our Location</p>
+                        <p class="ci-value">123 Food Street<br>Yummy City, YC 10001</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="ci-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="ci-text">
+                        <p class="ci-label">Opening Hours</p>
+                        <p class="ci-value">Monday &ndash; Sunday<br>10:00 AM &ndash; 11:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="ci-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="ci-text">
+                        <p class="ci-label">Phone</p>
+                        <p class="ci-value"><a href="tel:+11234567890">(123) 456-7890</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="ci-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="ci-text">
+                        <p class="ci-label">Email</p>
+                        <p class="ci-value"><a href="mailto:hello@yummycity.com">hello@yummycity.com</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="map-embed">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <p>123 Food Street, Yummy City &mdash; Map coming soon</p>
+            </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form-card reveal-on-scroll reveal-right">
+            <div id="cf-form-wrapper">
+                <h2>Send Us a Message</h2>
+                <p class="sub">We typically respond within 24 hours.</p>
+
+                <form id="contact-form">
+                    <div class="cf-row">
+                        <div class="cf-group">
+                            <label for="cf-name">Full Name</label>
+                            <input type="text" id="cf-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="cf-group">
+                            <label for="cf-email">Email Address</label>
+                            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="cf-row">
+                        <div class="cf-group">
+                            <label for="cf-phone">Phone (Optional)</label>
+                            <input type="tel" id="cf-phone" name="phone" placeholder="(123) 456-7890">
+                        </div>
+                        <div class="cf-group">
+                            <label for="cf-subject">Subject</label>
+                            <select id="cf-subject" name="subject">
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Table Reservation">Table Reservation</option>
+                                <option value="Private Event">Private Event</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Careers">Careers</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cf-group">
+                        <label for="cf-message">Your Message</label>
+                        <textarea id="cf-message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary cf-submit">SEND MESSAGE</button>
+                </form>
+            </div>
+
+            <!-- Success State -->
+            <div class="cf-success" id="cf-success">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <button class="btn-primary" id="cf-send-another">SEND ANOTHER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Opening Hours ── -->
+    <section class="hours-section">
+        <div style="text-align:center; margin-bottom:30px;">
+            <p class="eyebrow reveal-on-scroll">Plan Your Visit</p>
+            <h2 class="section-heading reveal-on-scroll">Opening Hours</h2>
+        </div>
+        <table class="hours-table reveal-on-scroll">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="hours-mon"><td>Monday</td><td>10:00 AM – 11:00 PM</td></tr>
+                <tr id="hours-tue"><td>Tuesday</td><td>10:00 AM – 11:00 PM</td></tr>
+                <tr id="hours-wed"><td>Wednesday</td><td>10:00 AM – 11:00 PM</td></tr>
+                <tr id="hours-thu"><td>Thursday</td><td>10:00 AM – 11:00 PM</td></tr>
+                <tr id="hours-fri"><td>Friday</td><td>10:00 AM – 12:00 AM</td></tr>
+                <tr id="hours-sat"><td>Saturday</td><td>9:00 AM – 12:00 AM</td></tr>
+                <tr id="hours-sun"><td>Sunday</td><td>9:00 AM – 10:00 PM</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Yummy City Restaurant. All rights reserved.</p>
+        <div class="socials">
+            <a class="social-icon" href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="16.2" cy="7.8" r="0.6" fill="currentColor"/>
+                </svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 6.5c-.6.3-1.2.5-1.9.6.7-.4 1.2-1.1 1.4-1.9-.6.4-1.4.7-2.1.8a3.3 3.3 0 0 0-5.7 3 9.4 9.4 0 0 1-6.8-3.5c-.3.5-.4 1.1-.4 1.7 0 1.1.6 2.1 1.4 2.7-.5 0-1-.2-1.5-.4v.1c0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.2 3 2.3-1.1.9-2.5 1.4-4 1.4H4c1.4.9 3.1 1.5 4.9 1.5 5.8 0 9-4.9 9-9.1v-.4c.6-.4 1.2-1 1.6-1.6z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ── RESERVATION POPUP MODAL ── -->
+    <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="booking-form-wrapper">
+                <p class="eyebrow">Reservations</p>
+                <h2 id="modal-title" class="modal-heading">Book A Table</h2>
+                <p class="modal-subtext">Reserve your table in advance for an unforgettable dining experience.</p>
+                <form id="booking-form" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-name">Full Name</label>
+                            <input type="text" id="book-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-phone">Phone Number</label>
+                            <input type="tel" id="book-phone" name="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-date">Date</label>
+                            <input type="date" id="book-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-time">Time</label>
+                            <select id="book-time" name="time" required>
+                                <option value="" disabled selected>Select Time</option>
+                                <option value="12:00 PM">12:00 PM (Lunch)</option>
+                                <option value="01:00 PM">01:00 PM (Lunch)</option>
+                                <option value="02:00 PM">02:00 PM (Lunch)</option>
+                                <option value="06:00 PM">06:00 PM (Dinner)</option>
+                                <option value="07:00 PM">07:00 PM (Dinner)</option>
+                                <option value="08:00 PM">08:00 PM (Dinner)</option>
+                                <option value="09:00 PM">09:00 PM (Dinner)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-guests">Guests</label>
+                            <select id="book-guests" name="guests" required>
+                                <option value="1 Person">1 Person</option>
+                                <option value="2 People" selected>2 People</option>
+                                <option value="3 People">3 People</option>
+                                <option value="4 People">4 People</option>
+                                <option value="5+ People">5+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-seating">Seating Preference</label>
+                            <select id="book-seating" name="seating">
+                                <option value="Standard Dining">Standard Dining</option>
+                                <option value="Window View">Window View</option>
+                                <option value="Outdoor Terrace">Outdoor Terrace</option>
+                                <option value="Cozy Booth">Cozy Booth</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-requests">Special Requests (Optional)</label>
+                        <input type="text" id="book-requests" name="requests" placeholder="e.g. Birthday, Anniversary, Dietary preferences">
+                    </div>
+                    <button type="submit" class="btn-primary modal-submit-btn">CONFIRM RESERVATION</button>
+                </form>
+            </div>
+            <div class="modal-success" id="booking-success" style="display: none;">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Table Reserved!</h3>
+                <p id="success-details">Thank you! Your table reservation has been received.</p>
+                <button type="button" class="btn-primary" id="success-close-btn">DONE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Highlight today in the hours table
+        const dayIds = ['hours-sun','hours-mon','hours-tue','hours-wed','hours-thu','hours-fri','hours-sat'];
+        const todayIdx = new Date().getDay();
+        const todayRow = document.getElementById(dayIds[todayIdx]);
+        if (todayRow) {
+            todayRow.classList.add('today-row');
+            const dayCell = todayRow.querySelector('td');
+            if (dayCell) {
+                dayCell.innerHTML += '<span class="hours-badge">Today</span>';
+            }
+        }
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const cfFormWrapper = document.getElementById('cf-form-wrapper');
+        const cfSuccess = document.getElementById('cf-success');
+        const cfSendAnother = document.getElementById('cf-send-another');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                cfFormWrapper.style.display = 'none';
+                cfSuccess.style.display = 'block';
+                contactForm.reset();
+            });
+        }
+
+        if (cfSendAnother) {
+            cfSendAnother.addEventListener('click', () => {
+                cfSuccess.style.display = 'none';
+                cfFormWrapper.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

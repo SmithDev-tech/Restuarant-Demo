@@ -58,48 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Navigation logic
-    const navItems = document.querySelectorAll('nav ul li');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const text = item.textContent.trim().toLowerCase();
-            let targetSection = null;
-            
-            const isMenuPage = window.location.pathname.endsWith('menu.html');
-            const isGalleryPage = window.location.pathname.endsWith('gallery.html');
-            const isOtherPage = isMenuPage || isGalleryPage;
+    // 4. Auto-highlight the active nav link based on current page URL
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        link.classList.remove('nav-active');
+        if (linkPage === currentPage) {
+            link.classList.add('nav-active');
+        }
+        // Special case: treat empty string / '/' as index.html
+        if ((currentPage === '' || currentPage === '/') && linkPage === 'index.html') {
+            link.classList.add('nav-active');
+        }
+    });
 
-            if (text === 'home') {
-                if (isOtherPage) {
-                    window.location.href = 'index.html';
-                } else {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            } else if (text === 'menu') {
-                if (!isMenuPage) {
-                    window.location.href = 'menu.html';
-                }
-            } else if (text === 'gallery') {
-                if (!isGalleryPage) {
-                    window.location.href = 'gallery.html';
-                }
-            } else if (text === 'about us') {
-                if (isOtherPage) {
-                    window.location.href = 'index.html#about';
-                } else {
-                    targetSection = document.querySelector('.about');
-                }
-            } else if (text === 'contact') {
-                if (isOtherPage) {
-                    window.location.href = 'index.html#contact';
-                } else {
-                    targetSection = document.querySelector('.info-strip') || document.querySelector('footer');
-                }
-            }
-
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+    // Close mobile nav when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
             if (navMenu && navMenu.classList.contains('is-open')) {
                 navMenu.classList.remove('is-open');
             }
@@ -127,8 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!modal) return;
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden'; // prevent background scrolling
-        // Reset form & state if needed
+        document.body.style.overflow = 'hidden';
         if (bookingFormWrapper) bookingFormWrapper.style.display = 'block';
         if (bookingSuccess) bookingSuccess.style.display = 'none';
     };
@@ -188,4 +163,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-

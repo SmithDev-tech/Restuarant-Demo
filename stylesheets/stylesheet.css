@@ -102,13 +102,19 @@ nav ul {
 }
 
 nav ul li {
-    cursor: pointer;
     position: relative;
     padding: 4px 0;
-    transition: color 0.25s ease;
 }
 
-nav ul li::after {
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav ul li a::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -122,11 +128,13 @@ nav ul li::after {
     border-radius: 2px;
 }
 
-nav ul li:hover {
+nav ul li a:hover,
+nav ul li a.nav-active {
     color: var(--green);
 }
 
-nav ul li:hover::after {
+nav ul li a:hover::after,
+nav ul li a.nav-active::after {
     transform: translateX(-50%) scaleX(1);
 }
 
@@ -217,7 +225,7 @@ button {
     justify-content: center;
     flex-direction: column;
     padding: 60px 60px 100px 60px;
-    background-image: url('herbg.png');
+    background-image: url('../assets/images/herbg.png');
     background-size: cover;
     background-position: center;
     position: relative;

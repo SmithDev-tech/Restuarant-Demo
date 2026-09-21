@@ -10,20 +10,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Anton&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
 </head>
 
 <body>
     <header class="animate-header">
-        <img src="logo.png" alt="Restaurant logo" class="logo">
+        <img src="assets/images/logo.png" alt="Restaurant logo" class="logo">
         <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <nav class="nav-menu">
             <ul>
-                <li>Home</li>
-                <li>Menu</li>
-                <li>About Us</li>
-                <li>Gallery</li>
-                <li>Contact</li>
+                <li><a href="index.html" class="nav-active">Home</a></li>
+                <li><a href="pages/menu.html">Menu</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li><a href="pages/gallery.html">Gallery</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
             </ul>
         </nav>
         <button class="btn-book">BOOK A TABLE</button>
@@ -32,12 +32,12 @@
     <section class="hero">
         <div class="hero-title-wrapper animate-hero-headline">
             <h1 class="sr-only">Crafted Flavors - Unforgettable Moments</h1>
-            <img src="hero text.png" alt="Crafted Flavors - Unforgettable Moments" class="hero-title-img">
+            <img src="assets/images/hero text.png" alt="Crafted Flavors - Unforgettable Moments" class="hero-title-img">
         </div>
         <p class="hero_p animate-hero-text">Artisanal dishes prepared with locally sourced ingredients, served in an
             inviting atmosphere.</p>
         <div class="hero-actions animate-hero-actions">
-            <button class="btn-primary" onclick="window.location.href='menu.html'">VIEW MENU</button>
+            <button class="btn-primary" onclick="window.location.href='pages/menu.html'">VIEW MENU</button>
             <button class="btn-outline">RESERVE NOW</button>
         </div>
     </section>
@@ -100,7 +100,7 @@
         <div class="dish-grid">
             <div class="dish-card reveal-on-scroll" style="--item-delay: 0.1s;">
                 <div class="dish-image">
-                    <img src="mushroom.png" alt="Creamy Mushroom Pasta" class="dish-img">
+                    <img src="assets/images/mushroom.png" alt="Creamy Mushroom Pasta" class="dish-img">
                     <button class="dish-fav" aria-label="Save dish">&#9825;</button>
                 </div>
                 <div class="dish-rating">
@@ -113,7 +113,7 @@
 
             <div class="dish-card reveal-on-scroll" style="--item-delay: 0.25s;">
                 <div class="dish-image">
-                    <img src="steak.png" alt="Grilled Beef Steak" class="dish-img">
+                    <img src="assets/images/steak.png" alt="Grilled Beef Steak" class="dish-img">
                     <button class="dish-fav" aria-label="Save dish">&#9825;</button>
                 </div>
                 <div class="dish-rating">
@@ -126,7 +126,7 @@
 
             <div class="dish-card reveal-on-scroll" style="--item-delay: 0.4s;">
                 <div class="dish-image">
-                    <img src="burger.png" alt="Classic Beef Burger" class="dish-img">
+                    <img src="assets/images/burger.png" alt="Classic Beef Burger" class="dish-img">
                     <button class="dish-fav" aria-label="Save dish">&#9825;</button>
                 </div>
                 <div class="dish-rating">
@@ -142,7 +142,7 @@
     <!-- ---------- ABOUT US ---------- -->
     <section class="about">
         <div class="about-image reveal-on-scroll reveal-left">
-            <img src="restaurant.png" alt="Restaurant Interior" class="about-img">
+            <img src="assets/images/restaurant.png" alt="Restaurant Interior" class="about-img">
             <div class="about-badge">
                 <span class="badge-number">10+</span>
                 <span class="badge-label">Years of<br>Experience</span>
@@ -154,7 +154,7 @@
             <p class="about-text">We are passionate about creating unforgettable dining experiences. Our chefs use only
                 the freshest ingredients to craft delicious meals that will tantalize your taste buds. Whether you're
                 here for a quick bite or a leisurely dinner, we promise to make your visit memorable.</p>
-            <button class="btn-primary">LEARN MORE</button>
+            <a href="pages/about.html" class="btn-primary" style="display:inline-block; text-decoration:none;">LEARN MORE</a>
         </div>
     </section>
 
@@ -331,7 +331,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
