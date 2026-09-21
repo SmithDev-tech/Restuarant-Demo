@@ -7,9 +7,9 @@
         }
         .gallery-hero h1 {
             font-size: 3rem;
-            color: var(--green);
+            color: var(--primary);
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         .gallery-section {
             width: calc(100% - 60px);
@@ -34,7 +34,7 @@
         }
         .gallery-item:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(47, 191, 110, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(138, 28, 49, 0.15);
             z-index: 2;
         }
         .gallery-item .img-placeholder {

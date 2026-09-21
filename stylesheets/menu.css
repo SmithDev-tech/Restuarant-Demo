@@ -8,9 +8,9 @@
 
         .menu-hero h1 {
             font-size: 3rem;
-            color: var(--green);
+            color: var(--primary);
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         .menu-section {

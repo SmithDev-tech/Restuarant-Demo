@@ -2,10 +2,10 @@
 :root {
     --bg-black: #0c0d0c;
     --panel-black: #151714;
-    --green: #2fbf6e;
-    --green-deep: #1c7a48;
-    --green-glow: #7fe3ac;
-    --text-white: #f4f4f2;
+    --primary: #8a1c31;
+    --primary-dark: #5e0f1e;
+    --primary-light: #b04b5f;
+    --text-white: #fdfaf6;
     --text-muted: #9c9f9b;
     --border-soft: rgba(255, 255, 255, 0.08);
 }
@@ -21,14 +21,14 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-black);
     color: var(--text-white);
     overflow-x: clip;
 }
 
 .eyebrow {
-    color: var(--green);
+    color: var(--primary);
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -37,7 +37,7 @@ body {
 }
 
 .section-heading {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.7rem, 3vw, 2.4rem);
     font-weight: 700;
     margin: 0 0 20px 0;
@@ -121,7 +121,7 @@ nav ul li a::after {
     left: 50%;
     width: 100%;
     height: 2px;
-    background: var(--green);
+    background: var(--primary);
     transform: translateX(-50%) scaleX(0);
     transform-origin: center;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -130,7 +130,7 @@ nav ul li a::after {
 
 nav ul li a:hover,
 nav ul li a.nav-active {
-    color: var(--green);
+    color: var(--primary);
 }
 
 nav ul li a:hover::after,
@@ -140,7 +140,7 @@ nav ul li a.nav-active::after {
 
 button {
     cursor: pointer;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     border: none;
     position: relative;
     overflow: hidden;
@@ -149,19 +149,19 @@ button {
 }
 
 .btn-book {
-    background-color: var(--green);
+    background-color: var(--primary);
     color: #06210f;
     font-weight: 600;
     font-size: 14px;
     padding: 12px 26px;
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(47, 191, 110, 0.25);
+    box-shadow: 0 4px 15px rgba(138, 28, 49, 0.25);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .btn-book:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(47, 191, 110, 0.45);
+    box-shadow: 0 8px 24px rgba(138, 28, 49, 0.45);
 }
 
 .btn-book:active {
@@ -256,7 +256,7 @@ button {
     max-width: 800px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 30px rgba(47, 191, 110, 0.3));
+    filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 30px rgba(138, 28, 49, 0.3));
     user-select: none;
     pointer-events: none;
 }
@@ -316,19 +316,19 @@ button {
 }
 
 .btn-primary {
-    background-color: var(--green);
+    background-color: var(--primary);
     color: #06210f;
     font-weight: 600;
     font-size: 14px;
     padding: 14px 30px;
     border-radius: 30px;
-    box-shadow: 0 4px 16px rgba(47, 191, 110, 0.28);
+    box-shadow: 0 4px 16px rgba(138, 28, 49, 0.28);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(47, 191, 110, 0.45);
+    box-shadow: 0 8px 25px rgba(138, 28, 49, 0.45);
 }
 
 .btn-primary:active {
@@ -402,7 +402,7 @@ button {
     height: 48px;
     border-radius: 50%;
     background-color: var(--panel-black);
-    color: var(--green);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -419,7 +419,7 @@ button {
 .feature-item:hover .feature-icon {
     transform: scale(1.12) rotate(4deg);
     background-color: #0c0d0c;
-    box-shadow: 0 8px 18px rgba(47, 191, 110, 0.35);
+    box-shadow: 0 8px 18px rgba(138, 28, 49, 0.35);
 }
 
 .feature-item h3 {
@@ -431,7 +431,7 @@ button {
 }
 
 .feature-item:hover h3 {
-    color: var(--green-deep);
+    color: var(--primary-dark);
 }
 
 .feature-item p {
@@ -511,8 +511,8 @@ button {
 
 .dish-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 0 0 15px rgba(47, 191, 110, 0.12);
-    border-color: rgba(47, 191, 110, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 0 0 15px rgba(138, 28, 49, 0.12);
+    border-color: rgba(138, 28, 49, 0.35);
 }
 
 .dish-image {
@@ -561,7 +561,7 @@ button {
 .dish-fav:hover {
     transform: scale(1.15);
     background-color: rgba(12, 13, 12, 0.95);
-    border-color: var(--green);
+    border-color: var(--primary);
 }
 
 .dish-fav.is-favorited {
@@ -595,7 +595,7 @@ button {
 }
 
 .stars {
-    color: var(--green);
+    color: var(--primary);
     letter-spacing: 2px;
 }
 
@@ -618,14 +618,14 @@ button {
 .dish-price {
     padding: 0 20px;
     margin: 0;
-    color: var(--green);
+    color: var(--primary);
     font-weight: 600;
     font-size: 1.05rem;
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .dish-card:hover .dish-price {
-    color: var(--green-glow);
+    color: var(--primary-light);
     transform: translateX(2px);
 }
 
@@ -676,13 +676,13 @@ button {
     bottom: 20px;
     left: 20px;
     z-index: 2;
-    background-color: var(--green);
+    background-color: var(--primary);
     color: #06210f;
     border-radius: 12px;
     padding: 18px 22px;
     margin: 0;
     line-height: 1.1;
-    box-shadow: 0 10px 25px rgba(47, 191, 110, 0.4);
+    box-shadow: 0 10px 25px rgba(138, 28, 49, 0.4);
     animation: floatBadge 3.8s ease-in-out infinite alternate;
     transition: transform 0.3s ease;
 }
@@ -695,18 +695,18 @@ button {
 @keyframes floatBadge {
     0% {
         transform: translateY(0);
-        box-shadow: 0 8px 20px rgba(47, 191, 110, 0.3);
+        box-shadow: 0 8px 20px rgba(138, 28, 49, 0.3);
     }
 
     100% {
         transform: translateY(-8px);
-        box-shadow: 0 16px 32px rgba(47, 191, 110, 0.45);
+        box-shadow: 0 16px 32px rgba(138, 28, 49, 0.45);
     }
 }
 
 .badge-number {
     display: block;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
 }
 
@@ -765,8 +765,8 @@ button {
     height: 44px;
     min-width: 44px;
     border-radius: 50%;
-    background-color: var(--green-deep);
-    color: var(--green-glow);
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -780,8 +780,8 @@ button {
 
 .info-item:hover .info-icon {
     transform: scale(1.12) rotate(-5deg);
-    box-shadow: 0 0 20px rgba(47, 191, 110, 0.45);
-    background-color: var(--green);
+    box-shadow: 0 0 20px rgba(138, 28, 49, 0.45);
+    background-color: var(--primary);
     color: #06210f;
 }
 
@@ -845,10 +845,10 @@ footer p {
 
 .social-icon:hover {
     transform: translateY(-5px) scale(1.08);
-    background-color: var(--green);
+    background-color: var(--primary);
     color: #0c0d0c;
-    border-color: var(--green);
-    box-shadow: 0 8px 18px rgba(47, 191, 110, 0.35);
+    border-color: var(--primary);
+    box-shadow: 0 8px 18px rgba(138, 28, 49, 0.35);
 }
 
 .social-icon:hover svg {
@@ -1089,7 +1089,7 @@ footer p {
     width: 100%;
     max-width: 540px;
     padding: 36px 32px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(47, 191, 110, 0.15);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(138, 28, 49, 0.15);
     position: relative;
     transform: translateY(24px) scale(0.95);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1127,7 +1127,7 @@ footer p {
 }
 
 .modal-heading {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.7rem;
     font-weight: 700;
     margin: 4px 0 8px 0;
@@ -1173,7 +1173,7 @@ footer p {
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 10px;
     padding: 12px 14px;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     color: var(--text-white);
     outline: none;
@@ -1182,8 +1182,8 @@ footer p {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 12px rgba(47, 191, 110, 0.3);
+    border-color: var(--primary);
+    box-shadow: 0 0 12px rgba(138, 28, 49, 0.3);
 }
 
 .form-group select option {
@@ -1209,13 +1209,13 @@ footer p {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: rgba(47, 191, 110, 0.15);
-    color: var(--green);
+    background: rgba(138, 28, 49, 0.15);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px auto;
-    border: 2px solid var(--green);
+    border: 2px solid var(--primary);
     animation: heartPop 0.5s ease;
 }
 
@@ -1275,4 +1275,7 @@ footer p {
         padding: 12px;
         margin-top: 4px;
     }
+}
+h1, h2, h3, h4, h5, h6, .section-heading, .animate-hero-headline {
+    font-family: 'Playfair Display', serif !important;
 }
