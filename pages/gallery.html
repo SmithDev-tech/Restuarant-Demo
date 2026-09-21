@@ -8,49 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/stylesheet.css">
-    <style>
-        .gallery-hero {
-            padding: 140px 20px 60px 20px;
-            text-align: center;
-            background-image: linear-gradient(to bottom, rgba(12,13,12,0.8), rgba(12,13,12,1)), url('../assets/images/herbg.png');
-            background-size: cover;
-            background-position: center;
-        }
-        .gallery-hero h1 {
-            font-size: 3rem;
-            color: var(--green);
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-        .gallery-section {
-            width: calc(100% - 60px);
-            max-width: 1200px;
-            margin: 40px auto 80px auto;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .gallery-item {
-            position: relative;
-            height: 280px;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--border-soft);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
-        }
-        .gallery-item:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(47, 191, 110, 0.15);
-            z-index: 2;
-        }
-        .gallery-item .img-placeholder {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../stylesheets/gallery.css">
 </head>
 <body>
     <header class="animate-header">
@@ -75,8 +33,8 @@
 
     <section class="gallery-section">
         <div class="gallery-grid">
-            <div class="gallery-item reveal-on-scroll">
-                <img src="../assets/images/restaurant.png" alt="Restaurant atmosphere" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="gallery-item vertical reveal-on-scroll">
+                <img src="../assets/images/packed restaurant.jpg" alt="Packed restaurant atmosphere" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="gallery-item reveal-on-scroll">
                 <img src="../assets/images/Prime Ribeye Steak.jpg" alt="Prime Ribeye Steak" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -87,8 +45,8 @@
             <div class="gallery-item reveal-on-scroll">
                 <img src="../assets/images/Grilled Salmon.jpg" alt="Grilled Salmon" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
-            <div class="gallery-item reveal-on-scroll">
-                <img src="../assets/images/Signature Cocktail.jpg" alt="Signature Cocktails" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="gallery-item vertical reveal-on-scroll">
+                <img src="../assets/images/restaurant.png" alt="Restaurant interior" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="gallery-item reveal-on-scroll">
                 <img src="../assets/images/Classic Tiramisu.jpg" alt="Classic Tiramisu" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -98,6 +56,9 @@
             </div>
             <div class="gallery-item reveal-on-scroll">
                 <img src="../assets/images/Caprese Salad.jpg" alt="Caprese Salad" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="gallery-item reveal-on-scroll">
+                <img src="../assets/images/outdorr.jpg" alt="Outdoor seating" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="gallery-item reveal-on-scroll">
                 <img src="../assets/images/Classic Bruschetta.jpg" alt="Classic Bruschetta" style="width:100%;height:100%;object-fit:cover;display:block;">
